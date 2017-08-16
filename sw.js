@@ -93,8 +93,8 @@ self.addEventListener('push', function(event) {
   const title = 'Mundo Lenovo';
   const options = {
     body: `${event.data.text()}`,
-    icon: 'images/icon.png',
-    badge: 'images/badge.png'
+    icon: 'public/images/icon.png',
+    badge: 'public/images/badge.png'
   };
 
   const notificationPromise = self.registration.showNotification(title, options);
