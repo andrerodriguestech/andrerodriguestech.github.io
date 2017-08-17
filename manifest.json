@@ -3,8 +3,10 @@
   "name": "Canal de incentivo Mundo Lenovo",
   "start_url": "index.html",
   "background_color": "#FB8C00",
+  "theme_color": "#E65100",
   "display": "standalone",
   "orientation": "portrait",
+  "description": "Canal de incentivo Mundo Lenovo",
   "icons": [
     {
       "src": "public/images/launcher-icon-1x.png",
@@ -35,6 +37,11 @@
       "src": "public/images/launcher-icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web"
     }
   ]
 }

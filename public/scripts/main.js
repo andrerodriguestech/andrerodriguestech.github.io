@@ -1,6 +1,6 @@
 'use strict';
 
-var applicationServerPublicKey = "BOKxs6WUroYgU_akMSztq1RG_c3TmqLK1J8yOtfIfcwzSiK3JLyLF-svI9jsOtR-v_7kF048U5uY\ntDxH3mCwbQQ";
+const applicationServerPublicKey = "BOKxs6WUroYgU_akMSztq1RG_c3TmqLK1J8yOtfIfcwzSiK3JLyLF-svI9jsOtR-v_7kF048U5uY\ntDxH3mCwbQQ";
 
 const pushButton = document.querySelector('.js-push-btn');
 
@@ -37,7 +37,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   });
 } else {
   console.warn('Push messaging is not supported');
-  pushButton.textContent = 'Push Not Supported';
+  pushButton.textContent = 'Envio de mensagens não suportado';
 }
 
 function initialiseUI() {
@@ -69,16 +69,16 @@ function initialiseUI() {
 
 function updateBtn() {
   if (Notification.permission === 'denied') {
-    pushButton.textContent = 'Push Messaging Blocked.';
+    pushButton.textContent = 'Envio de mensagens bloqueado';
     pushButton.disabled = true;
     updateSubscriptionOnServer(null);
     return;
   }
 
   if (isSubscribed) {
-    pushButton.textContent = 'Desabilite o Envio de Mensagens';
+    pushButton.textContent = 'Desabilite o envio de mensagens';
   } else {
-    pushButton.textContent = 'Habilite o Envio de Mensagens';
+    pushButton.textContent = 'Habilite o envio de mensagens';
   }
 
   pushButton.disabled = false;

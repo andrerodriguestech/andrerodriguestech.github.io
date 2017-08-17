@@ -12,7 +12,7 @@ var urlsToCache = [
   'public/images/launcher-icon-8x.png',
   'public/scripts/main.js',
   'public/styles/main.css',
-  'fav_icon.ico',
+  'favicon.ico',
   'public/images/icon.png',
   'index.html',
   'manifest.json',
@@ -24,7 +24,6 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
   );
@@ -88,8 +87,6 @@ self.addEventListener('fetch', function(event) {
 });
 
 self.addEventListener('push', function(event) {
-  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-
   const title = 'Mundo Lenovo';
   const options = {
     body: `${event.data.text()}`,
@@ -102,8 +99,6 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log('[Service Worker] Notification click Received.');
-
   event.notification.close();
 
   event.waitUntil(
