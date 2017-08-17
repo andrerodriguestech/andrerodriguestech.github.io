@@ -1,22 +1,22 @@
 'use strict';
 
-var applicationServerPublicKey = "BOKxs6WUroYgU_akMSztq1RG_c3TmqLK1J8yOtfIfcwzSiK3JLyLF-svI9jsOtR-v_7kF048U5uY\ntDxH3mCwbQQ";
+const applicationServerPublicKey = "BOKxs6WUroYgU_akMSztq1RG_c3TmqLK1J8yOtfIfcwzSiK3JLyLF-svI9jsOtR-v_7kF048U5uY\ntDxH3mCwbQQ";
 
-var pushButton = document.querySelector('.js-push-btn');
+const pushButton = document.querySelector('.js-push-btn');
 
-var isSubscribed = false;
-var swRegistration = null;
+let isSubscribed = false;
+let swRegistration = null;
 
 function urlB64ToUint8Array(base64String) {
-  var padding = '='.repeat((4 - base64String.length % 4) % 4);
-  var base64 = (base64String + padding)
+  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const base64 = (base64String + padding)
     .replace(/\-/g, '+')
     .replace(/_/g, '/');
 
-  var rawData = window.atob(base64);
-  var outputArray = new Uint8Array(rawData.length);
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
 
-  for (var i = 0; i < rawData.length; ++i) {
+  for (let i = 0; i < rawData.length; ++i) {
     outputArray[i] = rawData.charCodeAt(i);
   }
   return outputArray;
@@ -85,7 +85,7 @@ function updateBtn() {
 }
 
 function subscribeUser() {
-  var applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
+  const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
   swRegistration.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: applicationServerKey
@@ -108,7 +108,7 @@ function subscribeUser() {
 function updateSubscriptionOnServer(subscription) {
   // TODO: Send subscription to application server
 
-  var subscriptionJson = document.querySelector('.js-subscription-json');
+  const subscriptionJson = document.querySelector('.js-subscription-json');
 
   if (subscription) {
     subscriptionJson.textContent = JSON.stringify(subscription);
