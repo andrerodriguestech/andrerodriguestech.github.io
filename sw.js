@@ -2,7 +2,7 @@
 
 var CACHE_NAME = 'ml-cache-v1.01';
 
-/*var urlsToCache = [
+var urlsToCache = [
   'public/images/badge.png',
   'public/images/launcher-icon-1x.png',
   'public/images/launcher-icon-2x.png',
@@ -17,12 +17,6 @@ var CACHE_NAME = 'ml-cache-v1.01';
   'index.html',
   'manifest.json',
   'sw.js'
-];*/
-var urlsToCache = [
-    '/',
-    'public/images/',
-    'public/scripts/main.js',
-    'public/styles/main.css'
 ];
 
 self.addEventListener('install', function(event) {
