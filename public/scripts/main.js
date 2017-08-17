@@ -37,7 +37,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   });
 } else {
   console.warn('Push messaging is not supported');
-  pushButton.textContent = 'Notificações não são suportadas';
+  pushButton.textContent = 'Envio de mensagens não suportado';
 }
 
 function initialiseUI() {
@@ -69,16 +69,16 @@ function initialiseUI() {
 
 function updateBtn() {
   if (Notification.permission === 'denied') {
-    pushButton.textContent = 'Notificações bloqueadas.';
+    pushButton.textContent = 'Envio de mensagens bloqueado';
     pushButton.disabled = true;
     updateSubscriptionOnServer(null);
     return;
   }
 
   if (isSubscribed) {
-    pushButton.textContent = 'Desabilite o Envio de Mensagens';
+    pushButton.textContent = 'Desabilite o envio de mensagens';
   } else {
-    pushButton.textContent = 'Habilite o Envio de Mensagens';
+    pushButton.textContent = 'Habilite o envio de mensagens';
   }
 
   pushButton.disabled = false;
