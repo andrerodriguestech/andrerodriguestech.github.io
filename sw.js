@@ -1,8 +1,8 @@
 'use strict';
 
-var CACHE_NAME = 'ml-cache-v1.01';
+var CACHE_NAME = 'ml-cache-v1.03';
 
-var urlsToCache = [
+/*var urlsToCache = [
   'public/images/badge.png',
   'public/images/launcher-icon-1x.png',
   'public/images/launcher-icon-2x.png',
@@ -12,11 +12,17 @@ var urlsToCache = [
   'public/images/launcher-icon-8x.png',
   'public/scripts/main.js',
   'public/styles/main.css',
-  'fav_icon.ico',
+  'favicon.ico',
   'public/images/icon.png',
   'index.html',
   'manifest.json',
   'sw.js'
+];*/
+var urlsToCache = [
+    '/',
+    'public/images/',
+    'public/scripts/main.min.js',
+    'public/styles/main.css'
 ];
 
 self.addEventListener('install', function(event) {
@@ -24,7 +30,6 @@ self.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
-        console.log('Opened cache');
         return cache.addAll(urlsToCache);
       })
   );
@@ -32,7 +37,7 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = ['ml-cache-v1.01'];
+  var cacheWhitelist = ['ml-cache-v1.03'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -88,8 +93,6 @@ self.addEventListener('fetch', function(event) {
 });
 
 self.addEventListener('push', function(event) {
-  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
-
   const title = 'Mundo Lenovo';
   const options = {
     body: `${event.data.text()}`,
@@ -102,8 +105,6 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
-  console.log('[Service Worker] Notification click Received.');
-
   event.notification.close();
 
   event.waitUntil(

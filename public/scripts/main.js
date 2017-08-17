@@ -2,21 +2,21 @@
 
 var applicationServerPublicKey = "BOKxs6WUroYgU_akMSztq1RG_c3TmqLK1J8yOtfIfcwzSiK3JLyLF-svI9jsOtR-v_7kF048U5uY\ntDxH3mCwbQQ";
 
-const pushButton = document.querySelector('.js-push-btn');
+var pushButton = document.querySelector('.js-push-btn');
 
-let isSubscribed = false;
-let swRegistration = null;
+var isSubscribed = false;
+var swRegistration = null;
 
 function urlB64ToUint8Array(base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4);
-  const base64 = (base64String + padding)
+  var padding = '='.repeat((4 - base64String.length % 4) % 4);
+  var base64 = (base64String + padding)
     .replace(/\-/g, '+')
     .replace(/_/g, '/');
 
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
+  var rawData = window.atob(base64);
+  var outputArray = new Uint8Array(rawData.length);
 
-  for (let i = 0; i < rawData.length; ++i) {
+  for (var i = 0; i < rawData.length; ++i) {
     outputArray[i] = rawData.charCodeAt(i);
   }
   return outputArray;
@@ -37,7 +37,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   });
 } else {
   console.warn('Push messaging is not supported');
-  pushButton.textContent = 'Push Not Supported';
+  pushButton.textContent = 'Notificações não são suportadas';
 }
 
 function initialiseUI() {
@@ -69,7 +69,7 @@ function initialiseUI() {
 
 function updateBtn() {
   if (Notification.permission === 'denied') {
-    pushButton.textContent = 'Push Messaging Blocked.';
+    pushButton.textContent = 'Notificações bloqueadas.';
     pushButton.disabled = true;
     updateSubscriptionOnServer(null);
     return;
@@ -85,7 +85,7 @@ function updateBtn() {
 }
 
 function subscribeUser() {
-  const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
+  var applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
   swRegistration.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: applicationServerKey
@@ -108,7 +108,7 @@ function subscribeUser() {
 function updateSubscriptionOnServer(subscription) {
   // TODO: Send subscription to application server
 
-  const subscriptionJson = document.querySelector('.js-subscription-json');
+  var subscriptionJson = document.querySelector('.js-subscription-json');
 
   if (subscription) {
     subscriptionJson.textContent = JSON.stringify(subscription);
