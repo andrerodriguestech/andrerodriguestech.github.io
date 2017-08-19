@@ -87,7 +87,7 @@ self.addEventListener('fetch', function(event) {
 });
 
 self.addEventListener('push', function(event) {
-  const title = 'Mundo Lenovo';
+  const title = 'Progressive Web App';
   const options = {
     body: `${event.data.text()}`,
     icon: 'public/images/icon.png',

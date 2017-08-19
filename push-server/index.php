@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../favicon.ico">
 
-    <title>Painel Mundo Lenovo</title>
+    <title>Painel de Notificações</title>
 
     <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../public/vendor/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Painel Mundo Lenovo</h1>
+        <h1>Painel de Notificações</h1>
     </div>
 </div>
 

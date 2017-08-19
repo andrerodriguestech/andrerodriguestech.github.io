@@ -1,12 +1,12 @@
 {
-  "short_name": "Mundo Lenovo",
-  "name": "Canal de incentivo Mundo Lenovo",
+  "short_name": "PWA",
+  "name": "Progressive Web App",
   "start_url": "index.html",
   "background_color": "#FB8C00",
   "theme_color": "#E65100",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "Canal de incentivo Mundo Lenovo",
+  "description": "Progressive Web App",
   "icons": [
     {
       "src": "public/images/launcher-icon-1x.png",
