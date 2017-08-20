@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE_NAME = 'ml-cache-v1.01';
+var CACHE_NAME = 'ml-cache-v1.02';
 
 var urlsToCache = [
   'public/images/badge.png',
@@ -20,7 +20,6 @@ var urlsToCache = [
 ];
 
 self.addEventListener('install', function(event) {
-  // Perform install steps
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
@@ -31,7 +30,7 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = ['ml-cache-v1.01'];
+  var cacheWhitelist = ['ml-cache-v1.02'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -51,7 +50,6 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request)
       .then(function(response) {
         // Cache hit - return response
-        if (response) {
           return response;
         }
 
