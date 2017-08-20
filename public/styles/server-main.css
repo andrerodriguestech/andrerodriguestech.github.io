@@ -5,12 +5,12 @@ body {
 }
 
 .jumbotron {
-	background-color: #9E9E9E;
-  	color: white;
+  background-color: #4CAF50;
+    color: white;
 }
 
 .panel-body {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 /* Customize the nav-justified links to be fill the entire space of the .navbar */

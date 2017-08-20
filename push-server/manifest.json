@@ -1,12 +1,12 @@
 {
-  "short_name": "PWA",
-  "name": "Progressive Web App",
+  "short_name": "Painel",
+  "name": "Painel de Notificações",
   "start_url": "index.html",
-  "background_color": "#E65100",
-  "theme_color": "#F57C00",
+  "background_color": "#1B5E20",
+  "theme_color": "#388E3C",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "Progressive Web App",
+  "description": "Painel de Notificações",
   "icons": [
     {
       "src": "public/images/launcher-icon-1x.png",

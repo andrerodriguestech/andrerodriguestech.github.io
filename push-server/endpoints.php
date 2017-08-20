@@ -50,7 +50,7 @@
     <form action="save.php" method="post">
 
         <div class="form-group">
-            <textarea name="endpoint" id="endpoint" class="form-control" rows="5" placeholder="Endpoint"></textarea>
+            <textarea name="endpoint" id="endpoint" class="form-control" rows="5" placeholder="Endpoint" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-default js-push-btn">Salvar</button>

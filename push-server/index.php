@@ -23,7 +23,7 @@
     <link href="../public/styles/server-main.css" rel="stylesheet">
 
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#E65100"/>
+    <meta name="theme-color" content="#388E3C"/>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
     <form action="send.php" method="post">
 
         <div class="form-group">
-            <textarea name="msg" id="msg" class="form-control" rows="3" placeholder="Mensagem"></textarea>
+            <textarea name="msg" id="msg" class="form-control" rows="3" placeholder="Mensagem" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-default js-push-btn">Enviar</button>
