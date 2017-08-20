@@ -1,6 +1,6 @@
 'use strict';
 
-var CACHE_NAME = 'ml-cache-v1.02';
+var CACHE_NAME = 'ml-cache-v1.03';
 
 var urlsToCache = [
   'public/images/badge.png',
@@ -30,7 +30,7 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = ['ml-cache-v1.02'];
+  var cacheWhitelist = ['ml-cache-v1.03'];
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
@@ -50,6 +50,7 @@ self.addEventListener('fetch', function(event) {
     caches.match(event.request)
       .then(function(response) {
         // Cache hit - return response
+        if (response) {
           return response;
         }
 
@@ -86,11 +87,7 @@ self.addEventListener('fetch', function(event) {
 
 self.addEventListener('push', function(event) {
   const title = 'Progressive Web App';
-  const options = {
-    body: `${event.data.text()}`,
-    icon: 'public/images/icon.png',
-    badge: 'public/images/badge.png'
-  };
+  const options = JSON.parse(event.data.text());
 
   const notificationPromise = self.registration.showNotification(title, options);
   event.waitUntil(notificationPromise);
